@@ -5,7 +5,7 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
     public GameObject cardPrefab;
-    public List<GameObject> cards;
+    public GameObject hand;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,6 @@ public class Deck : MonoBehaviour
 
     void OnMouseDown()
     {
-        Instantiate(cardPrefab, new Vector3(-1, 1, 0), Quaternion.identity);
+        hand.GetComponent<Hand>().addCard(cardPrefab);
     }
 }
